@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get '/' =>'home#index'
 
-  get '/contacts' => 'contacts#new'
-
   resources :articles
   resource :contacts, only: [:new, :create]
 
