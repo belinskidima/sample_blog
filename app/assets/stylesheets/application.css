@@ -22,7 +22,9 @@
 	border-color: red;
 }
 
-.border_articles {
+.block {
+	border: 1px double black; /* Параметры границы */
 	border-color: gray;
-	width: 200px; 
+    padding: 10px; /* Поля вокруг текста */
+    
 }

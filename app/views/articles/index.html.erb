@@ -1,10 +1,9 @@
 <% @articles.each do |art| %>
-	<div style="font-family:Verdana; font-size:10pt;
- border-style:groove; border-width:1px; border-color:gray;">
+	<div class="block">
 	<h2><%=art.title%></h2>
 	<p><%=art.text%></p>
 	<br />
-	<input type='submit' value='Delete'></input>
+	<%= link_to "Show", article_path(art) %>
 	</div>
 	<hr/>
 <% end %>
