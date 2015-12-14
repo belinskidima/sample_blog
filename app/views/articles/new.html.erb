@@ -1,7 +1,7 @@
 <h2>Hello New!</h2>
 
 <%= form_for :article, url: articles_path do |f| %>
-
+<% if @article && @article.errors.any? %>
 <p>
 	<ul>
 		<% @article.errors.full_messages.each do |msg| %>			
@@ -10,6 +10,7 @@
 	</ul>
 	</p>
 	<p>	
+	<%end%>
 		<%= f.label :title %> <br />
 		<%= f.text_field :title %>
 	</p>
