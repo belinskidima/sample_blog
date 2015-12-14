@@ -1,0 +1,10 @@
+<% @articles.each do |art| %>
+	<div style="font-family:Verdana; font-size:10pt;
+ border-style:groove; border-width:1px; border-color:gray;">
+	<h2><%=art.title%></h2>
+	<p><%=art.text%></p>
+	<br />
+	<input type='submit' value='Delete'></input>
+	</div>
+	<hr/>
+<% end %>

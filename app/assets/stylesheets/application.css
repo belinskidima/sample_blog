@@ -21,3 +21,8 @@
 .field_with_errors textarea{
 	border-color: red;
 }
+
+.border_articles {
+	border-color: gray;
+	width: 200px; 
+}
