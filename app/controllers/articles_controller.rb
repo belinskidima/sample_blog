@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to @article
+    redirect_to articles_path
   end
 
   def edit
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else 
-      render action: 'new'
+      render action: 'edit'
     end    
   end
 
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
        @article.save
        redirect_to @article
     else
-      render action: 'edit'
+      render action: 'new'
     end
   end
 
