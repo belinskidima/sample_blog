@@ -2,10 +2,17 @@
 <h1><%= @article.title %></h1>
 
 <p> <%= @article.text%></p>
-<hr/>
+
 </div>
+<hr/>
+<% @article.comments.each do |comment| %>
+	<div class="container-fluid">
+	<h2><%=comment.author%></h2>
+	<p><%=comment.body%></p>
+	</div>
+<% end %>
 
-
+<hr/>
 <%= form_for ([@article, @article.comments.build])  do |f| %>
 <div class="container-fluid">
 		<%= f.label :author %> <br />
@@ -22,3 +29,4 @@
 	</p>
 	</div>
 <% end %>
+<hr/>
