@@ -1,7 +1,9 @@
-<h2>Contacts</h2>
+
 
 
 <%= form_for :contact, url: contacts_path do |f| %>
+<div class="container-fluid">
+<h2>Contacts</h2>
 	<% if @contact && @contact.errors.any? %>
 	<p>
 	<ul>
@@ -25,4 +27,5 @@
 	<p>	
 		<%= f.submit 'Send Message' %>
 	</p>
+	</div>
 <% end %>
