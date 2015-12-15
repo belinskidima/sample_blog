@@ -1,4 +1,24 @@
+<div class="container-fluid">
 <h1><%= @article.title %></h1>
 
 <p> <%= @article.text%></p>
-</hr>
+<hr/>
+</div>
+
+
+<%= form_for ([@article, @article.comments.build])  do |f| %>
+<div class="container-fluid">
+		<%= f.label :author %> <br />
+		<%= f.text_field :author %>
+	</p>
+
+	<p>	
+		<%= f.label :body %> <br />
+		<%= f.text_area :body %>
+	</p>
+
+	<p>	
+		<%= f.submit %>
+	</p>
+	</div>
+<% end %>
