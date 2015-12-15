@@ -1,7 +1,7 @@
+<div class="container">
 
+<%= form_for :article, url: articles_path, :html => {:class => 'form-group'} do |f| %>
 
-<%= form_for :article, url: articles_path do |f| %>
-<div class="container-fluid">
 <% if @article && @article.errors.any? %>
 <p>
 	<ul>
@@ -13,16 +13,19 @@
 	<p>	
 	<%end%>
 		<%= f.label :title %> <br />
-		<%= f.text_field :title %>
+		<%= f.text_field :title, :placeholder=>"Write your name", :title=>"Write your name" %>
 	</p>
 
 	<p>	
 		<%= f.label :text %> <br />
-		<%= f.text_area :text %>
+		<%= f.text_area :text, :class => "form-control", :cols => 10, :rows => 10, :placeholder=>"Write a comment...", :title=>"Write a comment..."  %>
 	</p>
 
 	<p>	
 		<%= f.submit %>
 	</p>
-	</div>
+	
 <% end %>
+</div>
+
+
