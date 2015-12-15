@@ -1,5 +1,7 @@
-<h3>Edit article</h3>
+
 <%= form_for :article, url: article_path(@article), method: :put do |f| %>
+<div class="container-fluid">
+<h3>Edit article</h3>
 <% if @article && @article.errors.any? %>
 <p>
 	<ul>
@@ -22,4 +24,5 @@
 	<p>	
 		<%= f.submit %>
 	</p>
+	</div>
 <% end %>

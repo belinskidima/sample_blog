@@ -1,6 +1,7 @@
-<h2>Hello New!</h2>
+
 
 <%= form_for :article, url: articles_path do |f| %>
+<div class="container-fluid">
 <% if @article && @article.errors.any? %>
 <p>
 	<ul>
@@ -23,4 +24,5 @@
 	<p>	
 		<%= f.submit %>
 	</p>
+	</div>
 <% end %>

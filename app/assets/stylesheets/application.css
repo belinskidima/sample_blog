@@ -22,9 +22,3 @@
 	border-color: red;
 }
 
-.block {
-	border: 1px double black; /* Параметры границы */
-	border-color: gray;
-    padding: 10px; /* Поля вокруг текста */
-    
-}
