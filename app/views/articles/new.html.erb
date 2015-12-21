@@ -5,9 +5,11 @@
 <% if @article && @article.errors.any? %>
 <p>
 	<ul>
+		<div class="alert ">
 		<% @article.errors.full_messages.each do |msg| %>			
-			<li><%= msg %></li>	
+			<li><%= msg %></li>
 		<% end %>
+		</div>
 	</ul>
 	</p>
 	<p>	
