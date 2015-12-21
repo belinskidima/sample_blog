@@ -19,7 +19,7 @@
   </ul>
   <ul class="inline-list hide-for-small-only account-action">
     <li><% if user_signed_in? %>
-  <li style = "color:white">Hello, <%= current_user.email %> </li>
+  <li style = "color:white">Hello, <%= current_user.username %> </li>
   <%= link_to  'Sign Out', destroy_user_session_path, :class => "signup", data: { confirm: 'Are you certain you want sign out?' }, :method => :delete %></li>
     <li class="">
     <% else %>
