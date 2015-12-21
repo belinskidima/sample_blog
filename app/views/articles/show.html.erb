@@ -42,11 +42,9 @@
 <div class="container">
 <strong>Write a comment!</strong>
 <p></p>
-		<%= f.label :author %> 
-		<p><%= f.text_field :author, :placeholder=>"Write your name", :title=>"Write your name" %>
-	</p>
+		
+		<%= f.hidden_field :author, :value => current_user.username  %>
 
-	<p>Comment.</p>
 		<%= f.text_area :body, :class => "form-control", :rows => "3", :placeholder=>"Write a comment...", :title=>"Write a comment..."  %>
 	
 
