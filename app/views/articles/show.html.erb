@@ -1,19 +1,15 @@
 
 
-<div class="container">
+
+<div class="row">
+<div class="col-xs-4">
 <h1><%= @article.title %></h1>
 
 <p> <%= @article.text%></p>
 <p></p>
-
 </div>
-
-
-<div class="container">
- <div class="row">
- <div class="col-md-8">
-<div class="comments-list">
-   
+<div class="col-sm-9">
+<div class="comments-list">   
 			<% @article.comments.each do |comment| %>
 			<hr/>
 			<div class="media">
@@ -29,31 +25,28 @@
 			<p><small><a href="">Like</a> - <a href="">Share</a></small></p>
 			</div>
 			</div>
-
 			<% end %>
 </div>
 </div>
 </div>
-</div>
-
 <hr/>
 <% if user_signed_in? %>
 <%= form_for ([@article, @article.comments.build]), :html => {:class => 'form-group'}  do |f| %>
-<div class="container">
+<div class="col-sm-9">
 <strong>Write a comment!</strong>
 <p></p>
-		
+</div>		
 		<%= f.hidden_field :author, :value => current_user.username  %>
-
+<div class="col-sm-9">
 		<%= f.text_area :body, :class => "form-control", :rows => "3", :placeholder=>"Write a comment...", :title=>"Write a comment..."  %>
-	
-
+</div>
 	<p>	
-		<%= f.submit %>
+		<%= f.submit 'Create Comment', :class => "btn btn-default" %>
 	</p>
-	</div>
+	
 	<hr/>
 <% end %>
 <% else %>
  <br/>
  <% end %>
+

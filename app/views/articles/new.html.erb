@@ -1,9 +1,5 @@
 <div class="container">
-
-<%= form_for :article, url: articles_path, :html => {:class => 'form-group'} do |f| %>
-
 <% if @article && @article.errors.any? %>
-<p>
 	<ul>
 		<div class="alert ">
 		<% @article.errors.full_messages.each do |msg| %>			
@@ -11,23 +7,23 @@
 		<% end %>
 		</div>
 	</ul>
-	</p>
-	<p>	
 	<%end%>
-		<%= f.label :title %> <br />
-		<%= f.text_field :title, :placeholder=>"Write your name", :title=>"Write your name" %>
-	</p>
-
-	<p>	
-		<%= f.label :text %> <br />
-		<%= f.text_area :text, :class => "form-control", :cols => 10, :rows => 10, :placeholder=>"Write a comment...", :title=>"Write a comment..."  %>
-	</p>
-
-	<p>	
-		<%= f.submit %>
-	</p>
+<div class="row">
+<%= form_for :article, url: articles_path, :html => {:class => 'form-inline'} do |f| %>
+<div class="form-group">
+	<%= f.label :title %> <br />
+	<%= f.text_field :title, :placeholder=>"Write your name", :title=>"Write your name", :class => "form-control" %>
+</div>
+<div class="form-group">
+	<%= f.label :text %> <br />
+	<%= f.text_area :text, :class => "form-control", :rows => 3, :placeholder=>"Write a comment...", :title=>"Write a comment..."  %>
+</div>
 	
+<%= f.submit 'Send', :class => "btn btn-default" %>
 <% end %>
 </div>
+</div>
+
+
 
 
